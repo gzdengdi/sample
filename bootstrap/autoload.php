@@ -32,3 +32,6 @@ $compiledPath = __DIR__.'/cache/compiled.php';
 if (file_exists($compiledPath)) {
     require $compiledPath;
 }
+
+/* 自动加载运行环境数据库选择配置 */
+require __DIR__.'/helpers.php';

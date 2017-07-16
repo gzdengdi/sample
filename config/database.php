@@ -2,6 +2,8 @@
 
 return [
 
+	$db_config = get_db_config();
+
     /*
     |--------------------------------------------------------------------------
     | PDO Fetch Style
@@ -64,7 +66,7 @@ return [
             'strict'    => false,
         ],
 
-        'pgsql' => [
+        /* 'pgsql' => [
             'driver'   => 'pgsql',
             'host'     => env('DB_HOST', 'localhost'),
             'database' => env('DB_DATABASE', 'forge'),
@@ -73,7 +75,19 @@ return [
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'public',
+        ], */
+		
+		'pgsql' => [
+            'driver'   => 'pgsql',
+            'host'     => $db_config['host'],
+            'database' => $db_config['database'],
+            'username' => $db_config['username'],
+            'password' => $db_config['password'],
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
         ],
+		
 
         'sqlsrv' => [
             'driver'   => 'sqlsrv',
